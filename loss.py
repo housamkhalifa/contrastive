@@ -1,13 +1,13 @@
  # Pairwise loss
-  dot_product = tf.matmul(class_vectors_mat, tf.transpose(class_vectors_mat))
-  square_norm = tf.diag_part(dot_product)
-  distances = tf.expand_dims(square_norm, 0) - 2.0 * ( dot_product) + tf.expand_dims(square_norm, 1)
-  distances = tf.maximum(distances, 0.0)
-  mask = tf.to_float(tf.equal(self.distances, 0.0))
-  distance = distances + mask * 1e-16
-  distance = tf.sqrt(distance)
-  distance = distance * (1.0 -mask)
-  pairwise_dist = (-tf.reduce_sum(distance))*lambd_pair
+#   dot_product = tf.matmul(class_vectors_mat, tf.transpose(class_vectors_mat))
+#   square_norm = tf.diag_part(dot_product)
+#   distances = tf.expand_dims(square_norm, 0) - 2.0 * ( dot_product) + tf.expand_dims(square_norm, 1)
+#   distances = tf.maximum(distances, 0.0)
+#   mask = tf.to_float(tf.equal(self.distances, 0.0))
+#   distance = distances + mask * 1e-16
+#   distance = tf.sqrt(distance)
+#   distance = distance * (1.0 -mask)
+#   pairwise_dist = (-tf.reduce_sum(distance))*lambd_pair
   
   # Attractive loss
   normalize_class_vec = tf.nn.l2_normalize(class_vec,1)        
